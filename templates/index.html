@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='https://apps.hoyd.net/ticketstub/static/style.css'/>
+    <title>Custom ticket stub</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="apps.hoyd.net/ticket" />
+    <meta property="og:description" content="Custom ticket stub" />
+    <meta property="og:url" content="http://apps.hoyd.net/ticket" />
+    <meta property="og:site_name" content="apps.hoyd.net/ticket" />
+    <meta property="og:locale" content="en_US" />
+</head>
+<body>
+
+<h2>Custom ticket stub</h2>
+<p>Enter your name and receive a custom space ticket stub graphic you can download and share :-)</p>
+<div class="container">
+<!--
+    <form method=post enctype=multipart/form-data>
+-->
+    <div class="row">   
+        <form role="form" method="POST" action="">
+            <input name="myname" id="myname" ></input>
+            <input type="radio" name="mycolor" id="option1" value="orange"> Orange </input<br>
+            <input type="radio" name="mycolor" id="option2" value="green"> Green </input<br>
+            <input type="radio" name="mycolor" id="option3" value="blue"> Blue </input<br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+<!--
+    </form>
+-->
+</div>
+{% if stub_filename %}
+<div class="stub">
+    <img src="{{ url_for('uploaded_file', filename=stub_filename) }}" alt='Custom green ticket stub'>
+</div>
+{% endif %}    
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45595881-7', 'auto');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
+
