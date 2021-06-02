@@ -3,18 +3,18 @@
 }
 
 label {
-  padding: 12px 12px 12px 0;
+  padding: 12px 12px;
   display: inline-block;
 }
 
-input[type=file] {
-  background-color: #f44336;
-  color: white;
+input[type=text] {
+  background-color: #fff;
+  color: black;
   padding: 15px 20px;
   border: none;
   border-radius: 4px;
   width:350px;
-  font-size:14px;
+  font-size:18px;
 }
 
 input[type=submit] {
@@ -25,12 +25,42 @@ input[type=submit] {
   border-radius: 4px;
   cursor: pointer;
   float: right;
-  font-size:14px;
+  font-size:20px;
 }
 
 input[type=submit]:hover {
-  background-color: #4CAF50;
+  background-color: darkgrey;
 }
+
+
+/* pretty radio */
+label > input[type="radio"] {
+  display: none;
+}
+label > input[type="radio"] + *::before {
+  content: "";
+  display: inline-block;
+  vertical-align: bottom;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border-radius: 20%;
+  border:none;
+  background-color: white;
+}
+
+label > input[type="radio"]:checked + *::before {
+  background: darkgray;
+  border-style: solid;
+  border-width: 0px;
+  border-color: #4CAF50;
+}
+
+label > input[type="radio"] + * {
+  display: inline-block;
+  padding: 10px 3px;
+}
+
 
 .container {
   border-radius: 5px;
@@ -67,10 +97,19 @@ img{
 }
 
 h2,p {
-  margin: 20px auto;
+  margin: 24px auto;
   width: 75%;
   left: 10vw;
-  color: #414141;               /* Dark gray */
+  color: #414141;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-size:30px;
+}
+
+p {
+  line-height: 25px;
 }
 
 /* Clear floats after the columns */
@@ -81,16 +120,42 @@ h2,p {
 }
 
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+
+@media screen and (max-width: 1024px) {
+    label {
+      padding: 12px 12px 12px 12px;
+    }
+}
+
 @media screen and (max-width: 700px) {
-    .col-75, .col-25, input[type=submit], input[type=file] {
+    .col-75, .col-25, input[type=submit], input[type=text] {
         width: 100%;
-        margin-top: 20;
+        margin-top: 20px;
     }
   
-    .container {
+    .container, .stub, h2,p  {
         width: 90%;
     }
-    .stub {
-        width: 90%;
-    }    
+
+    label {
+      padding: 12px 7px 12px 0;
+    }
 }
+
+@media screen and (max-width: 450px) {
+    label {
+      padding: 12px 0;
+    }
+
+    label > input[type="radio"] + * {
+      display: inline-block;
+      padding: 10px 3px;
+    }
+    h2 {
+      font-size:22px;
+    }
+}
+
+
+
+

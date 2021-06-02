@@ -6,8 +6,8 @@ from flask import Flask, flash, request, redirect, url_for, send_from_directory,
 from PIL import Image, ImageDraw, ImageFont
 import uuid
 
-#UPLOAD_FOLDER = '/home/hoyd/Development/ticketstub'
-UPLOAD_FOLDER = '/var/www/apps/ticketstub'
+UPLOAD_FOLDER = '/home/hoyd/Development/ticketstub'
+#UPLOAD_FOLDER = '/var/www/apps/ticketstub'
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 

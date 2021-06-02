@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel='stylesheet' href='https://apps.hoyd.net/ticketstub/static/style.css'/>
+    <link rel='stylesheet' href='static/style.css'/>
     <title>Custom ticket stub</title>
     <meta property="og:type" content="website" />
     <meta property="og:title" content="apps.hoyd.net/ticket" />
@@ -21,11 +21,20 @@
 -->
     <div class="row">   
         <form role="form" method="POST" action="">
-            <input name="myname" id="myname" ></input>
-            <input type="radio" name="mycolor" id="option1" value="orange"> Orange </input<br>
-            <input type="radio" name="mycolor" id="option2" value="green"> Green </input<br>
-            <input type="radio" name="mycolor" id="option3" value="blue"> Blue </input<br>
-            <button type="submit">Submit</button>
+            <input type="text" name="myname" id="myname" ></input>
+            <label>
+                <input type="radio" name="mycolor" id="option1" value="orange" />
+                <span>Orange</span>
+            </label>
+            <label>
+                <input type="radio" name="mycolor" id="option2" value="green"/>
+                <span>Green</span>
+            </label>
+            <label>
+                <input type="radio" name="mycolor" id="option3" value="blue" />
+                <span>Blue</span>
+            </label>
+            <input type="submit" value="Submit"></input>
         </form>
     </div>
 <!--
