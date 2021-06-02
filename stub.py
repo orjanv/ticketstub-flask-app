@@ -6,8 +6,7 @@ from flask import Flask, flash, request, redirect, url_for, send_from_directory,
 from PIL import Image, ImageDraw, ImageFont
 import uuid
 
-UPLOAD_FOLDER = '/home/hoyd/Development/ticketstub'
-#UPLOAD_FOLDER = '/var/www/apps/ticketstub'
+UPLOAD_FOLDER = 'uploads/'
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
@@ -74,7 +73,7 @@ def createTicket():
     stub_filename = 'stub-'+ uuid.uuid4().hex +'.png'
 
     # save the edited image
-    image.save(stub_filename, optimize=True, quality=20)
+    image.save(UPLOAD_FOLDER+stub_filename, optimize=True, quality=20)
     return render_template('index.html', stub_filename=stub_filename)
 
 
