@@ -14,13 +14,25 @@
 <body>
 
 <h2>Space ticket stub</h2>
-<p>Choose a color and enter a name to receive a custom space ticket stub graphic you can download and share with your friends :-)</p>
+<p>Choose a color and enter a name to create a space ticket stub you can download and share with your friends :-)</p>
 <div class="container">
 <!--
     <form method=post enctype=multipart/form-data>
 -->
     <div class="row">   
         <form role="form" method="POST" action="">
+            <label for="mycolor">Choose a color:</label>
+                <select name="mycolor" id="mycolor">
+                    <option value="orange">Orange</option>
+                    <option value="pink">Pink</option>
+                    <option value="blue">Blue</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="red">Red</option>
+                    <option value="brown">Brown</option>
+                    <option value="grey" selected="selected">Grey</option>
+                    <option value="green">Green</option>
+                </select>        
+<!--
             <label>
                 <input type="radio" name="mycolor" id="option1" value="orange" />
                 <span>Orange</span>
@@ -33,6 +45,7 @@
                 <input type="radio" name="mycolor" id="option3" value="blue" />
                 <span>Blue</span>
             </label>
+-->
             <input type="text" name="myname" id="myname" placeholder="Enter a name" />
             <input type="submit" value="Submit"></input>
         </form>
